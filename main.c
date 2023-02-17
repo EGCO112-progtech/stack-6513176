@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
         printf(": too many open parenthesis\n");
       }
       if (k == 0)
-        printf(" mismatch\n");
+        printf(": mismatch\n");
       N = 0;
       }
     else{
