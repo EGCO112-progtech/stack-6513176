@@ -16,9 +16,11 @@ int main(int argc, char **argv) {
   int i, N, j, k;
   NodePtr top = NULL;
   Stack s;
-  N = 0;
-  k = 0;
+  s.size = 0;
+  
   for (i = 1; i < argc; i++) {
+    N = 0;
+  k = 0;
     for (j = 0; j < strlen(argv[i]); j++)
       switch (argv[i][j]) {
       case '{':
@@ -41,11 +43,7 @@ int main(int argc, char **argv) {
         break;
       }
       }
-    if( N==0)
-      printf("argv %d Correct\n",i);
-  
-    }
-    if (N == 1) {
+    if (N == 1||s.size!=0) {
       printf("argv %d : Incorrect", i);
       if (k < 0) {
         printf(": too many closed parenthesis\n");
@@ -57,5 +55,10 @@ int main(int argc, char **argv) {
         printf(" mismatch\n");
       N = 0;
       }
-pop_all(&s);    
+    else{
+      printf("argv %d Correct\n",i);}
+  pop_all(&s);    
+    }
+    
+
 }
