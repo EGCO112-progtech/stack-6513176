@@ -18,24 +18,23 @@ void push(StackPtr s, int  value)
     s->size++;
   }
 }
-int pop(StackPtr s)
+char pop(StackPtr s)
 {
   NodePtr t = s->top;
   if (s->size>0) {
-    int value = t->data;
+    char value = t->data;
     s->top = t->nextPtr;
     free(t);
     s->size--;
     return value;
   } else {
-    printf("cant pop");
     return 0;
   }
 }
 void pop_all(StackPtr s)
 {
   while(s->size>0){
-    printf("%d",pop(s));
+    pop(s);
   }
 }
 #endif
