@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
       N = 0;
       }
     else{
-      printf("argv %d Correct\n",i);}
+      printf("argv %d : Correct\n",i);}
   pop_all(&s);    
     }
     
